@@ -2,12 +2,18 @@
 import java.util.Scanner;
 
 public class EmployeeWage {
+    public static int day = 20, Hours = 100, Wage_per_Hour = 20, Full_Day_Hour = 8, Part_Time_Hour = 8, Total_Wage = 0;
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Welcome to Employee Wage Computation");
-        int status = (int) (Math.random()%3);// status of the employee
-        int day = 20,Hours = 100,Wage_per_Hour = 20,Full_Day_Hour = 8,Part_Time_Hour = 8,Total_Wage = 0;
-        while (day != 0 && Hours != 0){
+        int
+
+
+    }
+    public static void employeeWage() {
+        int status;
+        while (day != 0 && Hours != 0) {
+            status = (int) (Math.random()%3);// status of the employee
             switch (status) {
                 case 0: {
                     System.out.println("Employee is absent");
