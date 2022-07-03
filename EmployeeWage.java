@@ -9,9 +9,17 @@ public class EmployeeWage {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Welcome to Employee Wage Computation");
-        String companyName = in.nextLine();
-
-        employeeWage(companyName);
+        System.out.println("Enter number of companies");
+        int N = in.nextInt();
+        String companyName[] = new String[N] ;
+        for(int i = 0; i < N ; i++) {
+            companyName[i]= in.nextLine();
+        }
+        int i = 0;
+        for(String k : companyName){
+            employeeWage(companyName[i]);
+            i++;
+        }
 
     }
     public static void employeeWage(String companyName) {
