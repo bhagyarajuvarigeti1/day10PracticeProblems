@@ -14,8 +14,9 @@ public class EmployeeWage implements EmployeeWageBuilder {
             companyName[i]= in.nextLine();
         }
         int i = 0;
+        EmployeeWage employeeWageObj = new EmployeeWage();
         for(String k : companyName){
-            employeeWage(companyName[i]);
+            employeeWageObj.employeeWage(companyName[i]);
             i++;
         }
 
