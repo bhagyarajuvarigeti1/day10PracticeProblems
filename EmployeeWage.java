@@ -1,21 +1,25 @@
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EmployeeWage implements EmployeeWageBuilder {
     public static int day = 20, Hours = 100, Wage_per_Hour = 20, Full_Day_Hour = 8, Part_Time_Hour = 8, Total_Wage = 0;
+    public static ArrayList<Integer> dailyWage = new ArrayList<>();
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Welcome to Employee Wage Computation");
         System.out.println("Enter number of companies");
         int N = in.nextInt();
-        String companyName[] = new String[N] ;
+        ArrayList<String> companyName = new ArrayList<>();
+
         for(int i = 0; i < N ; i++) {
-            companyName[i]= in.nextLine();
+            companyName.set(i, in.nextLine());
         }
+        EmployeeWage employeeWageObj = new EmployeeWage();
         int i = 0;
         for(String k : companyName){
-            employeeWage(companyName[i]);
+            employeeWageObj.employeeWage(companyName.get(i));
             i++;
         }
 
@@ -48,6 +52,7 @@ public class EmployeeWage implements EmployeeWageBuilder {
                 System.out.println("Employee is present");
                 System.out.println(Total_Wage);
             }
+            dailyWage.add(Total_Wage);
         }
     }
 }
