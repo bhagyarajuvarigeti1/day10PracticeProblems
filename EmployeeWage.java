@@ -5,13 +5,15 @@ import java.util.Scanner;
 public class EmployeeWage implements EmployeeWageBuilder {
     public static int day = 20, Hours = 100, Wage_per_Hour = 20, Full_Day_Hour = 8, Part_Time_Hour = 8, Total_Wage = 0;
     public static ArrayList<Integer> dailyWage = new ArrayList<>();
+    public static ArrayList<Integer> empWage = new ArrayList<>();
+    public static ArrayList<String> companyName = new ArrayList<>();
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Welcome to Employee Wage Computation");
         System.out.println("Enter number of companies");
         int N = in.nextInt();
-        ArrayList<String> companyName = new ArrayList<>();
+
 
         for(int i = 0; i < N ; i++) {
             companyName.set(i, in.nextLine());
@@ -22,9 +24,14 @@ public class EmployeeWage implements EmployeeWageBuilder {
             employeeWageObj.employeeWage(companyName.get(i));
             i++;
         }
-
+        System.out.println("Enter the company name to get empwage");
+        String companysName = in.nextLine();
+        getEmpWage(companysName);
     }
-
+    public static void getEmpWage(String name){
+        int x = companyName.indexOf(name);
+        System.out.println(empWage.get(x));
+    }
 
     @Override
     public void employeeWage(String companyName) {
@@ -35,6 +42,7 @@ public class EmployeeWage implements EmployeeWageBuilder {
             day--;Hours--;
         }
         System.out.println(companyName + " " + Total_Wage);
+        empWage.add(Total_Wage);
     }
 
     @Override
