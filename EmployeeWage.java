@@ -1,19 +1,20 @@
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class EmployeeWage {
     public static int day = 20, Hours = 100, Wage_per_Hour = 20, Full_Day_Hour = 8, Part_Time_Hour = 8, Total_Wage = 0;
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+
         System.out.println("Welcome to Employee Wage Computation");
         String companyName = in.nextLine();
-        
-        employeeWage();
 
-
+        employeeWage(companyName);
 
     }
-    public static void employeeWage() {
+    public static void employeeWage(String companyName) {
         int status;
         while (day != 0 && Hours != 0) {
             status = (int) (Math.random()%3);// status of the employee
@@ -33,5 +34,6 @@ public class EmployeeWage {
             }
             day--;Hours--;
         }
+        System.out.println(companyName + " " + Total_Wage);
     }
 }
